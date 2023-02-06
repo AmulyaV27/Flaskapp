@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        /* Add a background image */
+        body {
+            background-image: url("https://as1.ftcdn.net/v2/jpg/02/56/17/64/1000_F_256176467_52fIG5v0dPLnvxu6ELHscO0N25upC8e8.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* Center the form on the page */
+        .form-container {
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255,255,255,0.6);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+        }
+
+        /* Style the form elements */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label, input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"], input[type="password"] {
+            background-color: #f2f2f2;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        .signup {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup a {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div><marquee><h1>Login Page</h1></marquee></div>
+        <form action="{{url_for('login')}}" method="POST">
+            <div>{{ message }}</div> <br><br>
+            <label>User Name  </label><input id="username" name="username" type="text" placeholder="User Name" autocomplete="off"/> <br><br>
+            <label>Password  </label><input id="password" name="password" type="password" placeholder="Password" autocomplete="off"/> <br><br>
+            <button id="submit" name="submit" type="submit">Sign in</button>
+        </form>
+        <p class="signup">Don't have an account? Please click <a href="{{url_for('registration')}}">here</a></p>
+
+    </div>
+</body>
+</html>
